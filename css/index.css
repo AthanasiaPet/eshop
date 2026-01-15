@@ -1,0 +1,74 @@
+.shop-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #84a98c;
+    color: #1b4332;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.shop-link:hover {
+    background-color: #6b9080;
+}
+
+.intro {
+    display: flex;
+    align-items: center;      
+    justify-content: center; 
+    text-align: center;
+    background-image: linear-gradient(
+        rgba(47, 62, 70, 0.6),
+        rgba(47, 62, 70, 0.6)
+    ),
+    url("./images/kitty.avif");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+ 
+
+.intro-content {
+    max-width: 1000px;
+}
+
+.intro-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2f3a46;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    flex: 1; 
+}
+
+nav {
+    flex: 0;                
+    display: flex;
+    justify-content: center; 
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
