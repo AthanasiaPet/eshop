@@ -1,3 +1,20 @@
+<?php
+session_start();
+require_once "includes/db.php";
+
+$cart = $_SESSION['cart'] ?? [];
+$products = [];
+$total = 0;
+
+if (!empty($cart)) {
+    $ids = implode(",", array_keys($cart));
+
+    $sql = "SELECT * FROM products WHERE id IN ($ids)";
+    $stmt = $pdo->query($sql);
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -30,13 +47,43 @@
 
 <main class="center-page">
     <div class="center-box cart-box">
-        <h2>Το καλάθι σας είναι άδειο 🐾</h2>
+        <h2>Το καλάθι σας</h2>
 
-        <p>
-            Δεν έχετε προσθέσει ακόμα προϊόντα στο καλάθι σας.
-        </p>
+        <?php if (empty($cart)): ?>
+            <p>Το καλάθι είναι άδειο 🐾</p>
+            <a href="shop.php" class="shop-link">Πίσω στο κατάστημα</a>
 
-        <a href="shop.php" class="shop-link">Πίσω στο κατάστημα</a>
+        <?php else: ?>
+
+            <table class="cart-table">
+                <tr>
+                    <th>Προϊόν</th>
+                    <th>Τιμή</th>
+                    <th>Ποσότητα</th>
+                    <th>Σύνολο</th>
+                </tr>
+
+                <?php foreach ($products as $product): 
+                    $qty = $cart[$product['id']];
+                    $sum = $qty * $product['price'];
+                    $total += $sum;
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($product['name']); ?></td>
+                    <td>€<?php echo number_format($product['price'], 2); ?></td>
+                    <td><?php echo $qty; ?></td>
+                    <td>€<?php echo number_format($sum, 2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+
+                <tr class="total-row">
+                    <td colspan="3"><strong>Σύνολο</strong></td>
+                    <td><strong>€<?php echo number_format($total, 2); ?></strong></td>
+                </tr>
+            </table>
+
+        <?php endif; ?>
+
     </div>
 </main>
 

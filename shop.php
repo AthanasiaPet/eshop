@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "includes/db.php";
 $sql = "
     SELECT products.*, categories.name AS category_name
@@ -7,6 +8,8 @@ $sql = "
 ";
 $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -58,7 +61,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 €<?php echo number_format($product['price'], 2); ?>
             </p>
 
-            <button>Προσθήκη στο καλάθι</button>
+            <a href="add_to_cart.php?id=<?php echo $product['id']; ?>" class="add-cart-btn">
+                Προσθήκη στο καλάθι
+            </a>
+
         </div>
     <?php endforeach; ?>
 
