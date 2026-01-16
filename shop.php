@@ -1,3 +1,13 @@
+<?php
+require_once "includes/db.php";
+$sql = "
+    SELECT products.*, categories.name AS category_name
+    FROM products
+    JOIN categories ON products.category_id = categories.id
+";
+$stmt = $pdo->query($sql);
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -33,34 +43,26 @@
     <h2>Προϊόντα για Γάτες</h2>
 
     <div class="products">
+    <?php foreach ($products as $product): ?>
         <div class="product">
-            <h3>Ξηρά Τροφή Γάτας</h3>
-            <p>Πλήρης τροφή για ενήλικες γάτες.</p>
-            <p class="price">€8.50</p>
-            <button>Προσθήκη στο καλάθι</button>
-        </div>
+            <img 
+                src="images/products/<?php echo htmlspecialchars($product['image']); ?>" 
+                alt="<?php echo htmlspecialchars($product['name']); ?>"
+            >
 
-        <div class="product">
-            <h3>Άμμος Υγιεινής</h3>
-            <p>Άμμος με άρωμα λεβάντας.</p>
-            <p class="price">€6.00</p>
-            <button>Προσθήκη στο καλάθι</button>
-        </div>
+            <h3><?php echo htmlspecialchars($product['name']); ?></h3>
 
-        <div class="product">
-            <h3>Παιχνίδι με Φτερά</h3>
-            <p>Διασκεδαστικό παιχνίδι για γάτες.</p>
-            <p class="price">€4.20</p>
-            <button>Προσθήκη στο καλάθι</button>
-        </div>
+            <p><?php echo htmlspecialchars($product['description']); ?></p>
 
-        <div class="product">
-            <h3>Κολάρο Γάτας</h3>
-            <p>Ρυθμιζόμενο κολάρο με κουδουνάκι.</p>
-            <p class="price">€3.80</p>
+            <p class="price">
+                €<?php echo number_format($product['price'], 2); ?>
+            </p>
+
             <button>Προσθήκη στο καλάθι</button>
         </div>
-    </div>
+    <?php endforeach; ?>
+
+
 </main>
 
 <footer>

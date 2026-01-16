@@ -22,7 +22,7 @@
         rgba(47, 62, 70, 0.6),
         rgba(47, 62, 70, 0.6)
     ),
-    url("./images/kitty.avif");
+    url("../images/kitty.avif");
 
     background-size: cover;
     background-position: center;
