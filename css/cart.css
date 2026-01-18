@@ -11,6 +11,51 @@
     text-align: center;
 }
 
+
+.cart-table a {
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+
+
+.qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.cart-table .qty-btn {
+    font-size: unset;        
+    margin: 0;               
+    padding: 0;
+    background: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-icon {
+    width: 16px;          
+    height: 16px;
+    stroke: #333;
+}
+
+.cart-table .qty-btn:hover .qty-icon {
+    stroke: #52796f;        
+}
+
+.qty-number {
+    min-width: 22px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
 .total-row td {
     font-size: 18px;
 }

@@ -71,7 +71,25 @@ if (!empty($cart)) {
                 <tr>
                     <td><?php echo htmlspecialchars($product['name']); ?></td>
                     <td>€<?php echo number_format($product['price'], 2); ?></td>
-                    <td><?php echo $qty; ?></td>
+                    <td> <div class="qty-controls">
+        <a href="update_cart.php?id=<?php echo $product['id']; ?>&action=decrease" class="qty-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="qty-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+            </svg>
+        </a>
+
+        <span class="qty-number"><?php echo $qty; ?></span>
+
+        <a href="update_cart.php?id=<?php echo $product['id']; ?>&action=increase" class="qty-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="qty-icon">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+        </a>
+    </div>
+                    </td>
                     <td>€<?php echo number_format($sum, 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
