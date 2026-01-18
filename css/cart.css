@@ -59,3 +59,13 @@
 .total-row td {
     font-size: 18px;
 }
+
+.delete-btn .qty-icon {
+    stroke: #888;
+}
+
+.delete-btn:hover .qty-icon {
+    stroke: #c1121f;
+}
+
+
