@@ -107,11 +107,21 @@ if (!empty($cart)) {
                 </tr>
                 <?php endforeach; ?>
 
-                <tr class="total-row">
-                    <td colspan="3"><strong>Σύνολο</strong></td>
-                    <td><strong>€<?php echo number_format($total, 2); ?></strong></td>
+                 <tr class="total-row">
+                    <td colspan="4">
+                        <div class="total-row-content">
+                            <span class="total-label">Σύνολο</span>
+                            <span class="total-amount">€<?php echo number_format($total, 2); ?></span>
+                        </div>
+                    </td>
                 </tr>
             </table>
+            <!-- checkout button -->
+            <div class="checkout-button">
+                <a href="checkout.php">
+                <button type="button">Ολοκλήρωση Αγοράς</button>
+                </a>
+            </div>
 
         <?php endif; ?>
 
