@@ -1,0 +1,12 @@
+.form-message {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.form-message.error {
+    color: #c1121f;
+}
+
+.form-message.success {
+    color: #52796f;
+}

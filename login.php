@@ -5,7 +5,7 @@
     <title>Login - Cat Shop</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css?v=2">
 </head>
 <body>
 
@@ -30,9 +30,16 @@
 
 <main class="center-page">
     <div class="center-box login-box">
+
+    <?php if (isset($_GET['registered'])): ?>
+        <div class="alert alert-success">
+            Επιτυχής δημιουργία λογαριασμού! Παρακαλώ συνδεθείτε
+        </div>
+    <?php endif; ?>
+
         <h2>Σύνδεση</h2>
 
-        <form>
+        <form >
             <label>Email</label>
             <input type="email" placeholder="email@example.com">
 
