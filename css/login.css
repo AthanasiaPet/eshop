@@ -41,6 +41,12 @@
     text-align: center;
 }
 
+.alert.error {
+     background-color: #fdecea; 
+     color: #b02a37; 
+     border: 1px solid #f5c2c7; 
+}
+
 .login-box .alert-success {
     background: linear-gradient(135deg, #52b788, #40916c);
     color: #ffffff;
@@ -61,4 +67,5 @@
     animation: fadeIn 0.4s ease;
     margin-bottom: 40px;
 }
+
 
