@@ -34,3 +34,8 @@
 .payment-form button:hover {
     background-color: #354f52;
 }
+
+.logout-icon i {
+    color: white !important;
+    font-size: 20px;
+}

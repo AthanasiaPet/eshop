@@ -66,14 +66,18 @@ if (isset($_POST['checkout'])) {
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
 <header>
-    <h1><a href="index.php" class="logo">Cat Shop</a></h1>
+    <h1>
+        <a href="index.php" class="logo">Cat Shop</a>
+    </h1>
     <nav>
-        <a href="cart.php" class="cart-icon">Καλάθι</a>
-        <a href="logout.php" class="user-icon">Logout</a>
+        <a href="logout.php" class="logout-icon" title="Αποσύνδεση">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
     </nav>
 </header>
 
