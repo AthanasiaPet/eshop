@@ -5,6 +5,7 @@
     <title>Cat Shop - Αρχική</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
@@ -21,11 +22,11 @@
 
 <main class="intro">
     <div class="intro-content">
-        <h2>Καλώς ήρθατε στο Cat Shop</h2>
+        <h2>Καλώς ήρθατε στο Cat Shop <i class="fa-solid fa-paw"></i></h2>
 
         <p>
-            Στο ηλεκτρονικό μας κατάστημα  θα βρείτε ποιοτικά προϊόντα για τη γάτα σας σε μεγάλη ποικιλία. 
-            Τροφές, άμμος, παιχνίδια και αξεσουάρ για τον τετράποδο φίλο σας. Όλα σε προσιτές τιμές.
+            Στο ηλεκτρονικό μας κατάστημα  θα βρείτε ποιοτικά προϊόντα για τη γάτα σας σε μεγάλη ποικιλία και ασυναγώνιστες τιμές. 
+            Τροφές, άμμος, παιχνίδια και άλλα πολλά περιμένουν να τα εξερευνήσετε.
         </p>
 
         <p>
