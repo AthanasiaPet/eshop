@@ -81,60 +81,62 @@ if (isset($_POST['checkout'])) {
     </nav>
 </header>
 
-<main class="center-page">
-    <div class="center-box cart-box">
-        <h2>Checkout</h2>
+<main class="checkout-page"> 
+    <div class="checkout-wrapper">
 
-        <table class="cart-table">
-            <tr>
-                <th>Εικόνα</th> <th>Προϊόν</th>
-                <th>Τιμή</th>
-                <th>Ποσότητα</th>
-                <th>Σύνολο</th>
-            </tr>
-            <?php foreach ($products as $p): 
-                $qty = $cart[$p['id']];
-                $sum = $p['price'] * $qty;
-            ?>
-            <tr>
-                <td>
-                    <img src="images/products/<?php echo htmlspecialchars($p['image']); ?>" 
-                    alt="<?php echo htmlspecialchars($p['name']); ?>" 
-                    style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
-                </td>
-                <td><?php echo htmlspecialchars($p['name']); ?></td>
-                <td>€<?php echo number_format($p['price'],2); ?></td>
-                <td><?php echo $qty; ?></td>
-                <td>€<?php echo number_format($sum,2); ?></td>
-            </tr>
-            <?php endforeach; ?>
-            <tr class="total-row">
-                <td colspan="4"><strong>Σύνολο</strong></td>
-                <td><strong>€<?php echo number_format($total,2); ?></strong></td>
-            </tr>
-        </table>
+        <div class="cart-section">
+            <h2>Checkout</h2>
+            <table class="cart-table">
+                <tr>
+                    <th>Εικόνα</th> <th>Προϊόν</th>
+                    <th>Τιμή</th> <th>Ποσότητα</th> <th>Σύνολο</th>
+                </tr>
+                <?php foreach ($products as $p): 
+                    $qty = $cart[$p['id']];
+                    $sum = $p['price'] * $qty;
+                ?>
+                <tr>
+                    <td>
+                        <img src="images/products/<?php echo htmlspecialchars($p['image']); ?>" 
+                             alt="<?php echo htmlspecialchars($p['name']); ?>" 
+                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+                    </td>
+                    <td><?php echo htmlspecialchars($p['name']); ?></td>
+                    <td>€<?php echo number_format($p['price'],2); ?></td>
+                    <td><?php echo $qty; ?></td>
+                    <td>€<?php echo number_format($sum,2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr class="total-row">
+                    <td style="text-align: left;"><strong>Σύνολο</strong></td> 
+                    <td></td> <td></td> <td></td> 
+                    <td style="text-align: center;"><strong>€<?php echo number_format($total, 2); ?></strong></td>
+                </tr>
+            </table>
+        </div>
 
-        <h3>Στοιχεία Πληρωμής</h3>
-        <form method="post" class="payment-form">
-            <label>Όνομα Κατόχου</label>
-            <input type="text" name="card_name" required>
+        <div class="payment-section">
+            <h3>Στοιχεία Πληρωμής</h3>
+            <form method="post" class="payment-form">
+                <label>Όνομα Κατόχου</label>
+                <input type="text" name="card_name" placeholder="Maria Papadopoulou" required>
 
-            <label>Αριθμός Κάρτας</label>
-            <input type="text" name="card_number" required>
+                <label>Αριθμός Κάρτας</label>
+                <input type="text" name="card_number" placeholder="1234 5678 9101 1121" required>
 
-            <div class="row">
-            <div class="col">
-                <label>Ημ/νία Λήξης</label>
-                <input type="text" name="expiry" required>
-            </div>
-            <div class="col">
-                <label>CVV</label>
-                <input type="text" name="cvv" required>
-            </div>
-            </div>
-
-            <button type="submit" name="checkout">Πληρωμή</button>
-        </form>
+                <div class="row">
+                    <div class="col">
+                        <label>Ημ/νία Λήξης</label>
+                        <input type="text" name="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="col">
+                        <label>CVV</label>
+                        <input type="text" name="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <button type="submit" name="checkout">Ολοκλήρωση Πληρωμής</button>
+            </form>
+        </div>
 
     </div>
 </main>
