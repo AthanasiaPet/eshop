@@ -65,6 +65,8 @@ if (isset($_POST['checkout'])) {
     <title>Checkout - Cat Shop</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/checkout.css">
+
 </head>
 <body>
 <header>
@@ -104,21 +106,27 @@ if (isset($_POST['checkout'])) {
         </table>
 
         <h3>Στοιχεία Πληρωμής</h3>
-        <form method="post">
+        <form method="post" class="payment-form">
             <label>Όνομα Κατόχου</label>
             <input type="text" name="card_name" required>
 
             <label>Αριθμός Κάρτας</label>
             <input type="text" name="card_number" required>
 
-            <label>Ημ/νία Λήξης</label>
-            <input type="text" name="expiry" required>
-
-            <label>CVV</label>
-            <input type="text" name="cvv" required>
+            <div class="row">
+            <div class="col">
+                <label>Ημ/νία Λήξης</label>
+                <input type="text" name="expiry" required>
+            </div>
+            <div class="col">
+                <label>CVV</label>
+                <input type="text" name="cvv" required>
+            </div>
+            </div>
 
             <button type="submit" name="checkout">Πληρωμή</button>
         </form>
+
     </div>
 </main>
 

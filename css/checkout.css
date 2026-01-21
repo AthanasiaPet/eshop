@@ -1,0 +1,36 @@
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.payment-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.payment-form .row {
+    display: flex;
+    gap: 15px;
+}
+
+.payment-form .col {
+    flex: 1;
+}
+
+.payment-form button {
+    padding: 12px;
+    background-color: #52796f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #354f52;
+}
