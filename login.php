@@ -1,3 +1,34 @@
+<?php
+session_start();
+require_once "includes/db.php"; 
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['name'];
+        header("Location: shop.php"); 
+        exit;
+    } else {
+        $error = "Λάθος email ή κωδικός";
+    }
+}
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: shop.php"); 
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -37,14 +68,19 @@
         </div>
     <?php endif; ?>
 
+    <?php if ($error): ?>
+        <div class="alert error"><?php echo $error; ?></div>
+    <?php endif; ?>
+
+
         <h2>Σύνδεση</h2>
 
-        <form >
+        <form method="POST" >
             <label>Email</label>
-            <input type="email" placeholder="email@example.com">
+            <input type="email" placeholder="email@example.com" name="email" required>
 
             <label>Κωδικός</label>
-            <input type="password" placeholder="********">
+            <input type="password" placeholder="********" name="password" required>
 
             <button type="submit">Σύνδεση</button>
         </form>
