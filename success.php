@@ -11,15 +11,13 @@
 
 <header>
     <h1><a href="index.php" class="logo">Cat Shop</a></h1>
-    <nav>
-        <a href="shop.php" class="cart-icon">Καλάθι</a>
-    </nav>
+    
 </header>
 
 <main class="success-page">
     <div class="success-card">
         <h2>Η αγορά ολοκληρώθηκε επιτυχώς.</h2>
-        <p>Σας ευχαριστούμε για την προτίμηση! Σύντομα θα λάβετε e-mail με την εξέλιξη της παραγγελίας.</p>
+        <p>Σας ευχαριστούμε για την προτίμηση! Σύντομα θα λάβετε e-mail με την εξέλιξη της παραγγελίας σας.</p>
         <a href="shop.php">Συνέχεια αγορών</a>
     </div>
 </main>
