@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
-
 }
 
 .product {
@@ -11,7 +10,6 @@
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     transition: transform 0.2s, box-shadow 0.2s;
-    
 }
 
 .product:hover {
