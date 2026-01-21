@@ -50,8 +50,10 @@ if (!empty($cart)) {
         <h2>Το καλάθι σας</h2>
 
         <?php if (empty($cart)): ?>
-            <p>Το καλάθι είναι άδειο 🐾</p>
-            <a href="shop.php" class="shop-link">Πίσω στο κατάστημα</a>
+          <div class="empty-cart-container">
+        <p class="empty-cart">Ωχ... Το καλάθι είναι άδειο <i class="fa-regular fa-face-frown"></i></p>
+        <a href="shop.php" class="shop-link">Πίσω στο κατάστημα</a>
+    </div>
 
         <?php else: ?>
 
