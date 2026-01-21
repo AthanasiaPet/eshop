@@ -59,6 +59,7 @@ if (!empty($cart)) {
 
             <table class="cart-table">
                 <tr>
+                    <th>Εικόνα</th> 
                     <th>Προϊόν</th>
                     <th>Τιμή</th>
                     <th>Ποσότητα</th>
@@ -71,6 +72,11 @@ if (!empty($cart)) {
                     $total += $sum;
                 ?>
                 <tr>
+                    <td>
+                        <img src="images/products/<?php echo htmlspecialchars($product['image']); ?>" 
+                        alt="<?php echo htmlspecialchars($product['name']); ?>" 
+                        style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+                    </td>
                     <td><?php echo htmlspecialchars($product['name']); ?></td>
                     <td>€<?php echo number_format($product['price'], 2); ?></td>
                     <td>
@@ -110,7 +116,7 @@ if (!empty($cart)) {
                 <?php endforeach; ?>
 
                  <tr class="total-row">
-                    <td colspan="4">
+                    <td colspan="5">
                         <div class="total-row-content">
                             <span class="total-label">Σύνολο</span>
                             <span class="total-amount">€<?php echo number_format($total, 2); ?></span>

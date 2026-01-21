@@ -87,7 +87,7 @@ if (isset($_POST['checkout'])) {
 
         <table class="cart-table">
             <tr>
-                <th>Προϊόν</th>
+                <th>Εικόνα</th> <th>Προϊόν</th>
                 <th>Τιμή</th>
                 <th>Ποσότητα</th>
                 <th>Σύνολο</th>
@@ -97,6 +97,11 @@ if (isset($_POST['checkout'])) {
                 $sum = $p['price'] * $qty;
             ?>
             <tr>
+                <td>
+                    <img src="images/products/<?php echo htmlspecialchars($p['image']); ?>" 
+                    alt="<?php echo htmlspecialchars($p['name']); ?>" 
+                    style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+                </td>
                 <td><?php echo htmlspecialchars($p['name']); ?></td>
                 <td>€<?php echo number_format($p['price'],2); ?></td>
                 <td><?php echo $qty; ?></td>
@@ -104,7 +109,7 @@ if (isset($_POST['checkout'])) {
             </tr>
             <?php endforeach; ?>
             <tr class="total-row">
-                <td colspan="3"><strong>Σύνολο</strong></td>
+                <td colspan="4"><strong>Σύνολο</strong></td>
                 <td><strong>€<?php echo number_format($total,2); ?></strong></td>
             </tr>
         </table>
