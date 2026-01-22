@@ -129,14 +129,21 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     €<?= number_format($product['price'], 2); ?>
                 </p>
 
-                <a href="add_to_cart.php?id=<?= $product['id']; ?>" class="add-cart-btn">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="add_to_cart.php?id=<?= $product['id']; ?>" class="add-cart-btn">
+                        Προσθήκη στο καλάθι
+                    </a>
+                <?php else: ?>
+                    <a href="login.php" class="add-cart-btn">
                     Προσθήκη στο καλάθι
-                </a>
+                    </a>
+                <?php endif; ?>
+
             </div>
 
-<?php endforeach; ?>
+        <?php endforeach; ?>
 
-</div>
+    </div>
 </main>
 
 <footer>
