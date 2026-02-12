@@ -1,7 +1,7 @@
 #  Cat Shop – Dynamic eShop
 
 A dynamic eShop web application developed using **PHP, MySQL, HTML, CSS and JavaScript**.  
-The project was created as a semester project for a postgraduate program at the University of Western Attica, focusing on dynamic content generation, user authentication and shopping cart functionality.
+The project was created as a semester project for a postgraduate program at the University of West Attica, focusing on dynamic content generation, user authentication and shopping cart functionality.
 
 ---
 
